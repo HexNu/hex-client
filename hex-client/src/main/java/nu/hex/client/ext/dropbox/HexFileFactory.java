@@ -42,6 +42,7 @@ class HexFileFactory {
     }
 
     public static HexFile createFromFile(Metadata input) {
+        System.out.println(input);
         HexFile result = new HexFile(input.getName());
         result.setPath(input.getPathDisplay());
         result.setStorageProvider(Provider.DROPBOX);

@@ -44,9 +44,10 @@ public class Config {
         }
     }
 
-    public void save() {
+    public String save() {
         try {
-            new SimpleFileWriter(configFile, confDoc.toString()).write();
+            File file = new SimpleFileWriter(configFile, confDoc.toString()).write();
+            return file.getAbsolutePath();
         } catch (IOException ex) {
             throw new HexClientException("Could not save file", ex);
         }
